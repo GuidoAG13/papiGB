@@ -987,7 +987,9 @@ begin
 			584:  oUop = { `update_flags,  `addx16,   `bc   };
 			585:  oUop = { `eof,  `srx16,   `hl   };
 	//RLCA
-			586:  oUop = { `inc_eof_fu, `shlnc,  `null  };
+			586:  oUop = { `op, `xorx16,  `x16  };
+			587:  oUop = { `op, `shl8,  `null  };
+			588:  oUop = { `inc_eof_fu, `addx16c_ext,  `a  };
 
 	default:
 		oUop = {`op, `nop, `null };

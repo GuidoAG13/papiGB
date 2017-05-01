@@ -735,6 +735,7 @@ if (InstCount > `START_DUMP_INSN)
 							`ANDn: $fwrite(log,"=== ANDn  === %h \n", uut.DZCPU.iMCUData );
               `NOP: $fwrite(log,"=== NOP  === %h \n", uut.DZCPU.iMCUData );
               `RLCA: $fwrite(log,"=== RLCA  === %h \n", uut.DZCPU.iMCUData );
+
               default:
               begin
                   if (rResetDone)
@@ -811,7 +812,8 @@ if (InstCount > `START_DUMP_INSN)
         `xorx16: $fwrite(log,"xorx16 %h\n", uut.DZCPU.wRegData);
         `rrot:   $fwrite(log,"rrot %h\n", uut.DZCPU.wRegData);
         `xora:   $fwrite(log,"xora %h\n", uut.DZCPU.wRegData);
-        `shlnc: $fwrite(log, "shlnc  \n");
+        `shl8: $fwrite(log, "shl8  \n");
+        `addx16c_ext: $fwrite(log, "addx16c_ext  \n");
         `addx16c: $fwrite(log,"addx16rc %h + %h + %h = %h\n", uut.DZCPU.wX16, uut.DZCPU.wRegData,uut.DZCPU.wCarry, uut.DZCPU.rUopDstRegData);
         `shr: $fwrite(log,"shr %h >> 1 + %h\n", uut.DZCPU.wRegData, uut.DZCPU.wFlags[`flag_c] );
 

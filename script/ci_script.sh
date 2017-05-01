@@ -18,6 +18,18 @@ else
 	exit 1
 fi
 
+#RLCA
+make clean >/dev/null 2>&1
+make SIMFLAGS="-DENABLE_CPU_LOG -DLOAD_CARTRIDGE_FROM_FILE -DCARTRIGDE_DUMP_PATH='\"../tests/asm/test_RLCA.dump\"' -DSKIP_BIOS -DSIMULATION_TIME_OUT=1000 -DREG_F=0" >/dev/null 2>&1
+
+if grep -q "TEST_RET_VAL 1110" pgb_cpu.log
+then
+	echo "Test test_RLCA.dump passed"
+else
+	echo "Test test_RLCA.dump failed"
+	exit 1
+fi
+
 #ADDHLSP
 make clean >/dev/null 2>&1
 make SIMFLAGS="-DENABLE_CPU_LOG -DREG_F=8\'hB0 -DCARTRIGDE_DUMP_PATH='\"../tests/asm/test_ADDHLSP.dump\"' -DSKIP_BIOS -DSIMULATION_TIME_OUT=1000" >/dev/null 2>&1
@@ -1422,6 +1434,9 @@ else
 	echo "Test test_RETC.dump failed"
 	exit 1
 fi
+
+
+
 
 
 make clean  >/dev/null 2>&1
