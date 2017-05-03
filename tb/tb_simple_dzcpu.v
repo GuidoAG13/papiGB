@@ -735,6 +735,7 @@ if (InstCount > `START_DUMP_INSN)
 							`ANDn: $fwrite(log,"=== ANDn  === %h \n", uut.DZCPU.iMCUData );
               `NOP: $fwrite(log,"=== NOP  === %h \n", uut.DZCPU.iMCUData );
               `RLCA: $fwrite(log,"=== RLCA  === %h \n", uut.DZCPU.iMCUData );
+              //`DLNZn: $fwrite(log,"=== DJNZn  === %h \n", uut.DZCPU.iMCUData );
 
               default:
               begin

@@ -175,6 +175,7 @@ begin
   `ADDHLSP:	 oUopFlowIdx = 10'd580;
 	`ADDHLBC:	 oUopFlowIdx = 10'd583;
 	`RLCA:     oUopFlowIdx = 10'd586;
+	//`DJNZn:    oUopFlowIdx = 10'd589;
 	default:
 			 oUopFlowIdx = 10'd278;
 	endcase
@@ -987,9 +988,14 @@ begin
 			584:  oUop = { `update_flags,  `addx16,   `bc   };
 			585:  oUop = { `eof,  `srx16,   `hl   };
 	//RLCA
-			586:  oUop = { `op, `xorx16,  `x16  };
-			587:  oUop = { `op, `shl8,  `null  };
-			588:  oUop = { `inc_eof_fu, `addx16c_ext,  `a  };
+			586:  oUop = { `op, `xorx16, `x16  };
+			587:  oUop = { `op, `shl8,   `null  };
+			588:  oUop = { `inc_eof_fu,  `addx16c_ext,  `a  };
+	//DJNZn
+			//589:	oUop = { `op,	`dec16 , `b  };	//Decrement B in 1
+			//590:  oUop = { `op, `xorx16, `x16  };
+			//590:  oUop = { `op, `addx16, `b  };	//Sign extension for
+			//590: 	oUop = { `op, `xorf  , `flag_z  }; //F xor 0, to leave just Z bit
 
 	default:
 		oUop = {`op, `nop, `null };

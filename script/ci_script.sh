@@ -6,6 +6,18 @@
 
 cd sim/
 
+#DJNZn
+#make clean >/dev/null 2>&1
+#make SIMFLAGS="-DENABLE_CPU_LOG -DREG_F=8\'hB0 -DCARTRIGDE_DUMP_PATH='\"../tests/asm/test_RETI.dump\"' -DSKIP_BIOS -DSIMULATION_TIME_OUT=1000" >/dev/null 2>&1
+
+#if grep -q "TEST_RET_VAL XXXX" pgb_cpu.log
+#then
+	#echo "Test test_DJNZn.dump passed"
+#else
+#	echo "Test test_DJNZn.dump failed"
+#	exit 1
+#fi
+
 #RETI
 make clean >/dev/null 2>&1
 make SIMFLAGS="-DENABLE_CPU_LOG -DREG_F=8\'hB0 -DCARTRIGDE_DUMP_PATH='\"../tests/asm/test_RETI.dump\"' -DSKIP_BIOS -DSIMULATION_TIME_OUT=1000" >/dev/null 2>&1

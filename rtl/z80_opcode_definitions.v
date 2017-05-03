@@ -21,7 +21,7 @@
 //  `define  RRCA;
 
 //  10
-//  `define  DJNZn;
+  //`define  DJNZn  8'h10
   `define  LDDEnn 8'h11
   `define  LDDEmA 8'h12
   `define  INCDE 8'h13
@@ -706,11 +706,11 @@
 `define xorx16   5'h17
 `define rrot     5'h18
 `define xora     5'h19
-`define addx16c 5'h1a
-`define addx16u   5'h1b
-`define shr       5'h1c
-`define hlt       5'h1d
-`define shl8      5'h1e
+`define addx16c  5'h1a
+`define addx16u  5'h1b
+`define shr      5'h1c
+`define hlt      5'h1d
+`define shl8     5'h1e
 `define addx16c_ext 5'h1f
 
 `define null 5'h0
@@ -737,6 +737,7 @@
 `define x16   5'd17
 `define io_c  5'd18
 `define de    5'd19
+`define flag_z 5'd27
 
 `define bc    5'd21
 `define af    5'd22
