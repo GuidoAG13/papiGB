@@ -349,7 +349,7 @@ MUXFULLPARALELL_5SEL_GENERIC # (16) MUX_REGDATA
   .I12({8'b0,wSpL}),        .I13( {8'b0,wSpH} ),      .I14( wY16 ),      .I15( wZ16 ),
   .I16({8'b0,wX8 }),        .I17( wX16),              .I18({8'hff,wC}),  .I19({wD,wE}),
   .I20({8'b0,wFlags }),         .I21({wB,wC}),            .I22({wA,wFlags}),     .I23({8'b0,iMCUData}),
-  .I24({15'b0,wFlags[`flag_c]}), .I25( {8'b0,wY8 } ), .I26( {wX8,wY8 }), .I27({15'b0,wFlags[`flag_z]}),
+  .I24({15'b0,wFlags[`flag_c]}), .I25( {8'b0,wY8 } ), .I26( {wX8,wY8 }), .I27(16'b0),
   .I28(16'b0), .I29(16'b0), .I30(16'b0), .I31(16'b0),
   .O( wRegData )
 );

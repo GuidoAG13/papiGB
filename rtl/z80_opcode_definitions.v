@@ -737,7 +737,6 @@
 `define x16   5'd17
 `define io_c  5'd18
 `define de    5'd19
-`define flag_z 5'd27
 
 `define bc    5'd21
 `define af    5'd22
